@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_ecs_cluster" "ecs_cluster" {
-  name = "my-cluster"
+  name = "ecs-cluster"
 
   setting {
     name  = "containerInsights"
@@ -12,7 +12,7 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 }
 
 resource "aws_ecs_task_definition" "ecs_task" {
-  family                   = "my-ecs-task"
+  family                   = "ecs-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
